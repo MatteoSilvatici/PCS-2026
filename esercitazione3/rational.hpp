@@ -228,15 +228,20 @@ operator<<(std::ostream& os, rational<T>& r)
 		os << "NaN\n";
 	}
 	else if (r.inf()) {  // se è +-inf
-		if (r.num() > 0) os << "inf\n";
-		else os << "-inf\n";
+		if (r.num() > 0) os << "inf";
+		else os << "-inf";
 	}
 	else {
 		if (r.num() == 0) {  // se è 0
-			os << r.num() << "\n";
+			os << r.num();
 		}
 		else {  // se è un razionale finito diverso da 0
-		os << r.num() << "/" << r.den() << "\n";
+			if (r.den() == 1) {
+				os << r.num();
+			}
+			else {
+				os << r.num() << "/" << r.den();
+			}
 		}
 	}
     return os;
