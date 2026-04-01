@@ -24,11 +24,11 @@ int main(void)
         std::vector<int> vec_std = original_vec;
 		
 		/* BUBBLESORT */
-		tc.tic();     
+		tc.tic(); // inizio cronometro
 
-		bubblesort(vec1);
+		bubblesort(vec1); // sorting
     
-		double secs1 = tc.toc(); 
+		double secs1 = tc.toc(); // fermo cronometro
 		std::cout << "Elapsed time (bubblesort) : " << secs1 << " seconds\n";
 		
 		/* INSERTION-SORT */

@@ -4,12 +4,12 @@
 /* ALGORITMO IS_SORTED */
 template<typename T>
 bool is_sorted(const std::vector<T>& vec) {
-	bool ord = true;
+	bool ord = true; // inizializzo variabile booleana 
 	if (vec.size() == 0) {
-		return ord;
+		return ord; // se il vettore ha dimensione 0 è ordinato
 	}
 	for (int i = 0; i < vec.size() - 1; i++) {
-		if (vec[i] > vec[i+1]) {
+		if (vec[i] > vec[i+1]) { // controllo a due a due
 			ord = false;
 			return ord;
 		}
@@ -18,6 +18,7 @@ bool is_sorted(const std::vector<T>& vec) {
 }
 
 /* ALGORITMO BUBBLESORT */
+/* (confronto elementi a due a due, se ne trovo due in ordine errato li scambio) */
 template<typename T>
 void bubblesort(std::vector<T>& vec) {
 	if (vec.size() <= 1) return;
@@ -31,9 +32,10 @@ void bubblesort(std::vector<T>& vec) {
 		}
 	}
 	return;
-}
+} 
 
 /* ALGORITMO INSERTION-SORT */
+/* (scorro il vettore un elemento alla volta, facendolo "scivolare" all'indietro fino alla sua posizione corretta) */
 template<typename T>
 void insertion_sort(std::vector<T>& vec) {
 	if (vec.size() <= 1) return;
@@ -50,6 +52,7 @@ void insertion_sort(std::vector<T>& vec) {
 }
 
 /* ALGORITMO SELECTION-SORT */
+/* (cerco ciclicamente il valore minimo assoluto nella porzione non ancora ordinata) */
 template<typename T>
 void selection_sort(std::vector<T>& vec) {
 	if (vec.size() <= 1) return;

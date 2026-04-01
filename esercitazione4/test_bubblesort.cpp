@@ -6,7 +6,7 @@
 
 template<typename T>
 void
-print_vector(const std::vector<T>& v)
+print_vector(const std::vector<T>& v) // funzione di print per un vettore
 {
     for (size_t i = 0; i < v.size(); i++) {
         std::cout << v[i] << " ";
@@ -19,7 +19,7 @@ int main() {
 	std:: vector<std::string> test_string = {"mela","pera","banana","pesca","albicocca","barca","rickroll","computer","montagna"};
 	bubblesort(test_string);
 	
-	if (!is_sorted(test_string)) {
+	if (!is_sorted(test_string)) { // controllo ordinamento stringhe 
 		std::cerr << "Ordinamento stringhe fallito" << std::endl;
 		return EXIT_FAILURE;
 	}
@@ -27,15 +27,15 @@ int main() {
 	/* TEST VETTORI */
 	randfiller rf;
 	
-	std::vector<int> vdim;
-    vdim.resize(100);
+	std::vector<int> vdim; // inizializzo vettore 
+    vdim.resize(100); // inizializzo 100 elementi (...)
     rf.fill(vdim, 100, 1000); /* use it on vectors */
     print_vector(vdim);
 	
 	for(int i = 0; i < 100; i++) {
-		std::vector<int> vi;
-		vi.resize(vdim[i]);
-		rf.fill(vi, -10000, 10000); 
+		std::vector<int> vi; // inizializzo vettore
+		vi.resize(vdim[i]); 
+		rf.fill(vi, -10000, 10000); // riempio con elementi random
 		bubblesort(vi);
 		if (!is_sorted(vi)) {
 			std::cerr << "Ordinamento stringhe fallito" << std::endl;
