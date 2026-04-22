@@ -124,7 +124,7 @@ void merge(std::vector<T>& vec, int sx, int c, int dx) {
 	int i = 0;
 	int j = 0;
 	int k = sx;
-	while (i < n1 && j < n2) {
+	while (i < n1 && j < n2) { // confronto dei termini "in comune"
 		if (L[i] <= R[j]) {
 			vec[k] = L[i];
 			i++;
@@ -135,10 +135,12 @@ void merge(std::vector<T>& vec, int sx, int c, int dx) {
 		}
 		k++;
 	}
-	while (i < n1) {
+	while (i < n1) { // se R ha meno elementi, L ha ancora elementi, quindi li copio su vec
 		vec[k++] = L[i++]; // assegno valore e poi incremento k,i
 	}
-	while (j < n2) vec[k++] = R[j++]; // assegno valore e poi incremento k,j
+	while (j < n2) { // se L ha meno elementi, R ne ha ancora, quindi li copio su vec
+		vec[k++] = R[j++]; // assegno valore e poi incremento k,j
+	}	
 }
 
 /* (divide il vettore a metà ricorsivamente finchè non rimangono singoli elementi) */
