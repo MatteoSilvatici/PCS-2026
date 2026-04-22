@@ -1,0 +1,11 @@
+Vettori piccoli: 
+Fino a circa N = 60, l'Insertion Sort è il più veloce perché non ha il peso della ricorsione. Oltre questa soglia, il Quicksort standard prende il sopravvento. Questo accade poiché per valori piccoli di N, la crescita quadratica può essere più piccola di una crescita logaritmica.
+
+
+Quicksort Ibrido: 
+Usando la soglia di 60 per passare dal Quicksort all'Insertion Sort, le prestazioni migliorano: A N=100, la versione ibrida è quasi 5 volte più veloce del Quicksort normale ed è anche migliore dell'Insertion Sort da solo.
+
+
+std::sort(): 
+La funzione standard è veloce, ma il Quicksort ibrido è stato più veloce in questo test. Questo accade perché la soglia di 60 è stata tarata su misura per i risultati del mio pc, probabilmente.
+
